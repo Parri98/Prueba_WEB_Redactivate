@@ -8,7 +8,7 @@ Propuesta visual de actualización de Redactívate · Patrimonio de Proximidad.
 
 ![Vista previa de la maqueta](docs/vista_previa.jpg)
 
-La imagen panorámica oficial se carga desde la web de la Junta durante la navegación con conexión a Internet.
+Las imágenes panorámicas y las tarjetas **se muestran al instante** mediante recursos locales. Si el navegador consigue cargar los originales publicados por la Junta, se muestran automáticamente sobre las ilustraciones. No hay enlaces «Ver imagen oficial». Las imágenes SVG locales son ilustraciones de maqueta, no fotografías oficiales.
 
 ## Vista en GitHub Pages
 
@@ -32,7 +32,7 @@ index.html            # Página inicial para GitHub Pages
 css/portal.css        # Estilos generales
 css/institucional.css # Ajustes de apariencia corporativa
 js/portal.js          # Interacciones locales de la maqueta
-assets/               # Recorte de cabecera de referencia
+assets/               # Cabecera e ilustraciones locales para que todo se vea
 docs/                 # Informe justificativo PDF
 AVISO_MEDIOS_Y_MARCA.md
 ```

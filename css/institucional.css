@@ -77,13 +77,22 @@ body{font-family:Arial,Helvetica,sans-serif;color:#262626;font-size:14px;line-he
 @media(max-width:1100px){.ja-header-inner{flex-wrap:wrap;gap:0;padding-bottom:10px}.ja-primary-nav{justify-content:space-between;width:100%}.ja-primary-nav .ja-menu-item{min-width:0}.ja-logo{min-width:290px}.ja-banner-media{height:265px}.ja-banner-redactivate .ja-banner-media>img{height:265px}}
 @media(max-width:720px){.container{width:min(100% - 28px,var(--max))}.ja-utility-inner{gap:11px}.ja-utility-inner a:nth-child(n+6){display:none}.ja-header-inner{flex-wrap:nowrap;min-height:75px;padding:5px 0}.ja-logo{min-width:0;width:245px;max-width:calc(100% - 90px)}.ja-logo img{width:245px;height:54px}.mobile-toggle{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font-size:13px}.ja-primary-nav{display:none}.ja-primary-nav.is-open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));position:absolute;top:auto;right:0;left:0;background:#fff;border-bottom:1px solid #ddd;z-index:30;box-shadow:0 10px 15px #0002;padding:8px 16px}.ja-primary-nav.is-open .ja-menu-item{max-width:none;min-height:65px;flex-direction:row;justify-content:flex-start;text-align:left;padding:10px}.ja-primary-nav .ja-navicon{width:18px;height:18px}.breadcrumbs{min-height:35px;padding:13px 0 3px}.heading-row{padding:12px 0 22px}.heading-row h1{font-size:24px}.ja-banner-media{height:170px}.ja-banner-redactivate .ja-banner-media>img{height:170px}.ja-banner-formacion .ja-banner-media>img{height:170px}.intro{padding-top:26px}.quick-nav{grid-template-columns:1fr;padding:0 0 15px;gap:0}.quick-link{min-height:70px;padding:15px 0}.ja-footer-inner{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.ja-demo-marker{font-size:8px}}
 @media(max-width:420px){.ja-logo{width:207px}.ja-logo img{width:207px;height:47px}.ja-footer-inner{grid-template-columns:1fr}.ja-utility-inner a:nth-child(n+4){display:none}.ja-banner-media{height:140px}.ja-banner-redactivate .ja-banner-media>img,.ja-banner-formacion .ja-banner-media>img{height:140px}}
-/* Aviso no intrusivo mientras se carga el recurso remoto original. */
-.ja-banner-media{isolation:isolate}
-.ja-banner-media>img{z-index:2;position:relative;background:#fff}
-.ja-banner-media>img[hidden]{display:none!important}
-.ja-banner-offline,.ja-banner-offline[hidden]{display:flex!important;position:absolute;inset:0;z-index:1;flex-direction:column;align-items:center;justify-content:center;background:#fafafa;gap:3px}
-.ja-banner-offline strong{font-size:16px}
-.ja-banner-offline span,.ja-banner-offline a{font-size:12px;color:#616161}
 
-.ja-banner-media>img{visibility:hidden}
-.ja-banner-media>img[style*="visible"]{visibility:visible}
+/* v3: imágenes inmediatas en GitHub Pages. El material local se ve siempre;
+   una fotografía oficial solo lo sustituye cuando efectivamente se carga. */
+.ja-banner-media,.visual-card.ja-training-image,.initiative-visual.ja-project-image{position:relative;overflow:hidden}
+.ja-banner-media>img.ja-media-local,.ja-banner-media>img.ja-media-remote,
+.visual-card.ja-training-image>img.ja-media-local,.visual-card.ja-training-image>img.ja-media-remote,
+.initiative-visual.ja-project-image>img.ja-media-local,.initiative-visual.ja-project-image>img.ja-media-remote{
+  display:block!important;position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;max-width:none!important;
+  object-fit:cover!important;object-position:center center!important;
+  margin:0!important;padding:0!important;visibility:visible!important;background:transparent!important;
+}
+.ja-banner-media>img.ja-media-local,.ja-training-image>img.ja-media-local,.ja-project-image>img.ja-media-local{z-index:1}
+.ja-banner-media>img.ja-media-remote,.ja-training-image>img.ja-media-remote,.ja-project-image>img.ja-media-remote{
+ z-index:2;opacity:0;transition:opacity .3s ease;pointer-events:none;
+}
+.ja-banner-media>img.ja-media-remote.is-ready,.ja-training-image>img.ja-media-remote.is-ready,.ja-project-image>img.ja-media-remote.is-ready{opacity:1}
+.ja-banner-media{height:clamp(220px,25vw,360px)}
+@media(max-width:720px){.ja-banner-media{height:clamp(135px,27vw,230px)}}

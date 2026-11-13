@@ -149,6 +149,15 @@
     });
     showYear('2025');
   }
+
+  // Presentación progresiva de originales oficiales: la ilustración local no desaparece
+  // salvo que el navegador haya cargado correctamente la imagen remota.
+  document.querySelectorAll('[data-upgrade-image]').forEach(img => {
+    const show = () => { if (img.naturalWidth > 0) img.classList.add('is-ready'); };
+    img.addEventListener('load', show, { once: true });
+    if (img.complete) show();
+  });
+
   if(document.body.dataset.page==='formacion')initFormation();
   if(document.body.dataset.page==='redactivate')initRedactivate();
 })();
