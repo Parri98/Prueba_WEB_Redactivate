@@ -1,0 +1,89 @@
+/* Prototipo visual inspirado en la cabecera y retícula reales de Junta de Andalucía IAPH.
+   No incluye CSS propietario ni sustituye al tema corporativo de Drupal. */
+:root{--max:1120px;--green:#00843D;--green-dark:#006b31;--ink:#1c1c1c;--muted:#555}
+body{font-family:Arial,Helvetica,sans-serif;color:#262626;font-size:14px;line-height:1.56;background:#fff}
+.container{width:min(var(--max),calc(100% - 36px))}
+.ja-utility{height:27px;background:#303030;color:#fff}
+.ja-utility-inner{height:27px;display:flex;align-items:center;justify-content:flex-end;gap:18px}
+.ja-utility-inner a{font-size:10px;font-weight:600;line-height:1;text-decoration:none;color:white}
+.ja-utility-inner a:nth-child(n+4){font-size:15px;font-weight:700}
+.ja-utility-inner a:hover{text-decoration:underline}
+.ja-separator{color:#eee}
+.ja-header{background:#fff;border-bottom:1px solid #e5e5e5}
+.ja-header-inner{display:flex;align-items:center;justify-content:space-between;min-height:89px;gap:25px}
+.ja-logo{display:block;width:345px;min-width:320px;flex-shrink:0;text-decoration:none}
+.ja-logo img{display:block;height:67px;width:345px;object-fit:contain;object-position:left center}
+.ja-primary-nav{display:flex;justify-content:flex-end;gap:6px;align-items:center}
+.ja-primary-nav .ja-menu-item{min-width:83px;max-width:95px;padding:8px 5px;text-decoration:none;color:#006b2d;font-size:12px;font-weight:700;line-height:1.14;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:71px}
+.ja-primary-nav .ja-menu-item:hover,.ja-primary-nav .ja-menu-item:focus-visible{background:#f7f7f7;color:#005628}
+.ja-navicon{color:#b4d7c0;height:22px;width:22px}
+.ja-menu-item[aria-current="location"] .ja-navicon,.ja-menu-item:nth-child(4) .ja-navicon{color:#067a39}
+.mobile-toggle{display:none}
+.breadcrumbs{min-height:42px;padding:14px 0 6px;gap:9px;color:#007d32;font-size:11px}
+.breadcrumbs a{color:#00803b}
+.heading-row{padding:13px 0 36px;align-items:flex-start}
+.heading-row h1{font-size:26px;line-height:1.26;font-weight:700;letter-spacing:-.02em;max-width:1050px}
+.ja-banner{width:100%;margin:0;background:white;border-bottom:4px solid #00853e}
+.ja-banner-media{width:100%;height:295px;display:flex;justify-content:center;align-items:center;overflow:hidden;position:relative;background:#fff}
+.ja-banner-media>img{max-width:none;height:100%;width:100%;object-fit:contain;object-position:center}
+/* Full-bleed panoramas (PAGUS+ pattern), without replacing the actual IAPH artwork. */
+.ja-banner-formacion .ja-banner-media{background:#fdfdfd}
+.ja-banner-formacion .ja-banner-media>img{height:100%;width:100%;max-width:1240px;object-fit:contain}
+.ja-banner-redactivate .ja-banner-media{background:#fff}
+.ja-banner-redactivate .ja-banner-media>img{height:295px;width:100%;max-width:1100px;object-fit:cover;object-position:center 33%}
+.ja-banner-offline{padding:24px;color:#454545;text-align:center}
+.ja-banner-offline strong,.ja-banner-offline span,.ja-banner-offline a{display:block}
+.ja-banner-offline span{font-size:12px;margin:6px 0}
+.ja-banner-offline a{font-size:12px}
+.intro{padding:38px 0 18px;max-width:100%;}
+.intro .lead{font-size:19px;font-weight:700;color:#232323;line-height:1.48}
+.intro p{font-size:14px;color:#464646}
+.quick-nav{border-bottom:0;gap:30px;padding:12px 0 25px}
+.quick-link{border-top:0;border-bottom:1px solid #d3d3d3;min-height:100px;padding:4px 4px 16px 0}
+.quick-link:hover{border-color:#008338}
+.quick-link strong{font-size:17px}
+.quick-num{display:none}
+.quick-arrow{font-size:17px}
+.section-block{padding:50px 0 60px}
+.section-head h2{font-size:23px;letter-spacing:0}
+.section-head p{font-size:14px}
+.eyebrow{color:#006d30}
+.feature-card,.initiative-card,.activity-card,.edition-detail{border:1px solid #ddd}
+.feature-grid{gap:26px}
+.visual-card.ja-training-image{height:190px;padding:0;background:white}
+.visual-card.ja-training-image:before,.visual-card.ja-training-image:after{display:none}
+.visual-card.ja-training-image img{width:100%;height:100%;object-fit:contain}
+.feature-body{padding:22px}
+.feature-body h3{font-size:18px}
+.chip{background:#f5f5f5;border-color:#e2e2e2;color:#006c34}
+.resource-item{border-top:1px solid #d9d9d9}
+.resource-icon{border-color:#ddd}
+.ja-content-context{color:#666;margin-bottom:20px;font-size:13px}
+.info-item{padding-top:0;border-top:0;border-bottom:1px solid #ddd;padding-bottom:26px}
+.info-index{color:#177c41;font-size:10px}
+.info-item h3{margin-top:7px}
+.year-button{border-radius:0;background:#fff}
+.year-button.active{background:#eff8f1}
+.initiative-visual.ja-project-image{height:170px;padding:0;background:#fff}
+.initiative-visual.ja-project-image:after{display:none}
+.initiative-visual.ja-project-image img{width:100%;height:100%;object-fit:cover}
+.ja-footer{background:#303030;color:#fff;margin-top:25px;padding:45px 0 24px}
+.ja-footer-inner{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}
+.ja-footer h2{font-size:17px;color:#fff;font-weight:700;margin-bottom:18px}
+.ja-footer a{display:block;text-decoration:none;color:#eaeaea;font-size:12px;margin-bottom:8px}
+.ja-footer a:hover{text-decoration:underline}
+.ja-footer-disclaimer{border-top:1px solid #555;color:#aaa;font-size:10px;margin-top:34px;padding-top:13px}
+.ja-demo-marker{position:fixed;right:12px;bottom:12px;background:#f3f3f3;border:1px solid #bbb;color:#555;padding:5px 9px;z-index:100;font-size:9px;font-weight:bold;opacity:.94}
+@media(max-width:1100px){.ja-header-inner{flex-wrap:wrap;gap:0;padding-bottom:10px}.ja-primary-nav{justify-content:space-between;width:100%}.ja-primary-nav .ja-menu-item{min-width:0}.ja-logo{min-width:290px}.ja-banner-media{height:265px}.ja-banner-redactivate .ja-banner-media>img{height:265px}}
+@media(max-width:720px){.container{width:min(100% - 28px,var(--max))}.ja-utility-inner{gap:11px}.ja-utility-inner a:nth-child(n+6){display:none}.ja-header-inner{flex-wrap:nowrap;min-height:75px;padding:5px 0}.ja-logo{min-width:0;width:245px;max-width:calc(100% - 90px)}.ja-logo img{width:245px;height:54px}.mobile-toggle{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;font-size:13px}.ja-primary-nav{display:none}.ja-primary-nav.is-open{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));position:absolute;top:auto;right:0;left:0;background:#fff;border-bottom:1px solid #ddd;z-index:30;box-shadow:0 10px 15px #0002;padding:8px 16px}.ja-primary-nav.is-open .ja-menu-item{max-width:none;min-height:65px;flex-direction:row;justify-content:flex-start;text-align:left;padding:10px}.ja-primary-nav .ja-navicon{width:18px;height:18px}.breadcrumbs{min-height:35px;padding:13px 0 3px}.heading-row{padding:12px 0 22px}.heading-row h1{font-size:24px}.ja-banner-media{height:170px}.ja-banner-redactivate .ja-banner-media>img{height:170px}.ja-banner-formacion .ja-banner-media>img{height:170px}.intro{padding-top:26px}.quick-nav{grid-template-columns:1fr;padding:0 0 15px;gap:0}.quick-link{min-height:70px;padding:15px 0}.ja-footer-inner{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.ja-demo-marker{font-size:8px}}
+@media(max-width:420px){.ja-logo{width:207px}.ja-logo img{width:207px;height:47px}.ja-footer-inner{grid-template-columns:1fr}.ja-utility-inner a:nth-child(n+4){display:none}.ja-banner-media{height:140px}.ja-banner-redactivate .ja-banner-media>img,.ja-banner-formacion .ja-banner-media>img{height:140px}}
+/* Aviso no intrusivo mientras se carga el recurso remoto original. */
+.ja-banner-media{isolation:isolate}
+.ja-banner-media>img{z-index:2;position:relative;background:#fff}
+.ja-banner-media>img[hidden]{display:none!important}
+.ja-banner-offline,.ja-banner-offline[hidden]{display:flex!important;position:absolute;inset:0;z-index:1;flex-direction:column;align-items:center;justify-content:center;background:#fafafa;gap:3px}
+.ja-banner-offline strong{font-size:16px}
+.ja-banner-offline span,.ja-banner-offline a{font-size:12px;color:#616161}
+
+.ja-banner-media>img{visibility:hidden}
+.ja-banner-media>img[style*="visible"]{visibility:visible}
